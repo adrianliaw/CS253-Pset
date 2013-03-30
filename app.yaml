@@ -1,0 +1,36 @@
+application: cs253-pset
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: yes
+
+handlers:
+- url: /favicon\.ico
+  static_files: favicon.ico
+  upload: favicon\.ico
+
+- url: /Final/.*
+  script: wiki.app
+
+- url: /Unit6/.*
+  script: blog3.app
+
+- url: /Fun/ABgame/.*
+  script: ABgame.app
+
+- url: /Unit4/.*
+  script: account.app
+
+- url: /Unit5/.*
+  script: blog.app
+
+- url: .*
+  script: main.app
+
+
+libraries:
+- name: webapp2
+  version: "2.5.2"
+
+- name: jinja2
+  version: latest

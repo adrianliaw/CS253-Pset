@@ -1,0 +1,59 @@
+<html>
+<head>
+<style type="text/css">
+body {
+    position: relative;
+    font-family: Comic Sans MS;
+    font-size: 14px;
+    width: 800px;
+    margin: 0 auto;
+    padding: 10px;
+    color: #333;
+}
+.login-area {
+    font-size: 13px;
+    color: gray;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.login-link {
+    color: gray;
+    text-decoration: none;
+}
+.error {
+    color: red;
+}
+
+textarea {
+  margin-top: 5px;
+  font-weight: bold;
+  width: 800px;
+  height: 400px;
+  font-size: 13px;
+  font-family: Comic Sans MS;
+}
+
+.main-title {
+    display: block;
+    color: #222;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+    text-decoration: none;
+}
+</style>
+<title>Wiki</title>
+</head>
+<body>
+<a href="/" class="main-title"></a>
+<div class="login-area">
+<a href="/Final/wiki{{page}}" class="login-link">view</a>&nbsp;&nbsp;&nbsp;{{user.username}} (<a href="/Final/wiki/logout" class="login-link">logout</a>)
+</div>
+<form method="post">
+<textarea name="content">{{content}}</textarea>
+<br>
+<input type="submit" value="Save">
+</form>

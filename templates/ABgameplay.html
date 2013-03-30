@@ -1,0 +1,70 @@
+<html>
+<head><title>ABgame</title></head>
+<body bgcolor="black">
+<center style="color: white">
+<font face="Comic Sans MS" size="6">
+<h1>AB Guess Number Game!</h1>
+{% for i in CACHE %}
+guess{{i}}:
+<pre style="color: purple">    {{CACHE[i].guessing}}</pre>
+<pre style="color: blue">    {{CACHE[i].response}}</pre>
+{% endfor %}
+<br>
+Guess 4 numbers:
+<br>
+<form method="post">
+<select name="first">
+<option value="0">0</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+</select>
+
+<select name="second">
+<option value="0">0</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+</select>
+
+<select name="third">
+<option value="0">0</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+</select>
+
+<select name="fourth">
+<option value="0">0</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+</select>
+<div style="color: red">{{error}}</div>
+<input type="submit" value="Guess it !">
+</form>
+<br><br><br><br>

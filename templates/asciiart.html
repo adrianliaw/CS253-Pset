@@ -1,0 +1,32 @@
+<html>
+<head>
+<title>AsciiArt</title>
+</head>
+<body bgcolor="#FFFGG0">
+<center>
+<br><br><font face="Comic Sans MS">
+<h1>ASCII art!</h1>
+<form method="post">
+<label>
+<div>Title</div>
+<input name="title" value="{{title}}">
+</label>
+<label>
+<div>Art</div>
+<textarea name="art" cols="50" rows="30">{{art}}</textarea>
+</label><br>
+<div class="error" style="color:red">{{error}}</div>
+<input type="submit">
+</form>
+
+<hr>
+
+{% for art in arts %}
+  <div>
+  <div>{{art.title}}</div>
+  <pre>{{art.art}}</pre>
+  </div>
+  <hr width="30%">
+{% endfor %}
+</body>
+</html>

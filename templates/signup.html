@@ -1,0 +1,25 @@
+<html>
+<head>
+<title>SignUp</title>
+</head>
+<body>
+<center>
+<font size="8">SignUp</font><br>
+<font size="5">
+<form method="post">
+<label><pre>Username</pre>
+<input type="text" name="username" value="{{name}}"><div class="error" style="color: red">{{ername}}</div>
+</label><br>------------------------------------------------------------------
+<label><pre>Password</pre>
+<input type="password" name="password"><div style="color: red">{{erpassword}}</div>
+</label><br>------------------------------------------------------------------
+<label><pre>Verify Password</pre>
+<input type="password" name="verify"><div style="color: red">{{verpassword}}</div>
+</label><br>------------------------------------------------------------------
+<label><pre>E-mail(optional)</pre>
+<input type="text" name="email" value="{{email}}"><div style="color: red">{{eremail}}</div>
+</label><br><br>
+<input type="submit">
+</form>
+</body>
+</html>

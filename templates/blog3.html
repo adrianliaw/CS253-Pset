@@ -1,0 +1,24 @@
+<html>
+<head>
+<style type="text/css">a {text-decoration: none;color:black}</style>
+<title>Myblog</title>
+</head>
+<body bgcolor="#FFFFCC">
+<center>
+<br><br><font face="Comic Sans MS">
+<h1><a href="/Unit6/blog">My Blog!</a></h1>
+
+<br><br>
+{% for entry in entries %}
+  <div>
+  <div><h2><a href="/Unit6/blog/{{entry.key().id()}}">{{entry.subject}}</a></h2></div>
+  <hr width="60%" noshade="noshade" size="3">
+  <pre><font face="Comic Sans MS">{{entry.content}}</font></pre>
+  <font size="1" color="gray">posted at {{entry.created.date()}}</font>
+  </div>
+  <br><br>
+{% endfor %}
+<br><br><br>
+<font size="2" color="gray">Queried {{sec}} seconds ago
+</body>
+</html>
