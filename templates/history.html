@@ -1,0 +1,130 @@
+<html>
+<head>
+<script type="text/javascript">
+function altRows(id){
+	if(document.getElementsByTagName){  
+		
+		var table = document.getElementById(id);  
+		var rows = table.getElementsByTagName("tr"); 
+		 
+		for(i = 0; i < rows.length; i++){          
+			if(i % 2 == 0){
+				rows[i].className = "evenrowcolor";
+			}else{
+				rows[i].className = "oddrowcolor";
+			}      
+		}
+	}
+}
+window.onload=function(){
+	altRows('alternatecolor');
+}
+</script>
+<title>History</title>
+<style type="text/css">
+body {
+    position: relative;
+    font-family: Comic Sans MS;
+    font-size: 14px;
+    width: 1000px;
+    margin: 0 auto;
+    padding: 10px;
+    color: #333;
+}
+.login-area {
+    font-size: 13px;
+    color: gray;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.login-link {
+    color: gray;
+    text-decoration: none;
+}
+.error {
+    color: red;
+}
+
+textarea {
+  margin-top: 5px;
+  font-weight: bold;
+  width: 800px;
+  height: 400px;
+  font-size: 13px;
+  font-family: Comic Sans MS;
+}
+
+.main-title {
+    display: block;
+    color: #222;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+    text-decoration: none;
+}
+
+table {
+  padding:10px;
+  border:hidden;
+  border-width: 0px
+  border-collapse:collapse;
+  width:1000px;
+  word-break:break-all;
+}
+
+td {font-size:17}
+
+
+table.altrowstable {
+	font-size:11px;
+	color:#333333;
+	border-collapse: collapse;
+}
+
+table.altrowstable td {
+	padding: 8px;
+	border-style: none;
+}
+.oddrowcolor{
+	background-color:#FFF;
+}
+.evenrowcolor{
+	background-color:#DEDEDE;
+}
+
+
+
+</style>
+</head>
+<body>
+<a href="/" class="main-title"></a>
+<div class="login-area">
+{% if user %}
+<a href="/Final/wiki/_edit{{page}}" class="login-link">edit</a> | <a href="/Final/wiki{{page}}" class="login-link">view</a>&nbsp;&nbsp;&nbsp; {{user.username}} (<a href="/Final/wiki/logout" class="login-link">logout</a>)
+{% else %}
+<a href="/Final/wiki{{page}}" class="login-link">view</a>&nbsp;&nbsp;&nbsp; <a href="/Final/wiki/login" class="login-link">login</a> | <a href="/Final/wiki/signup" class="login-link">signup</a>
+{% endif %}
+</div>
+<br>
+<center>
+<table class="altrowstable" id="alternatecolor">
+<tr>
+<td width="240px" bgcolor="white"></td>
+<td width="660px" bgcolor="white"></td>
+<td width="100px" bgcolor="white"></td>
+</tr>
+{% for page in hist %}
+<tr>
+<td>{{page.created.strftime('%c')}}</td>
+<td>{{page.content}}</td>
+{% if user %}
+<td><a href="/Final/wiki{{page.page}}?v={{hist.__len__() - hist.index(page)}}" class="login-link">view</a> <a href="/Final/wiki/_edit{{page.page}}" class="login-link">edit</a></td>
+{% else %}
+<td><a href="/Final/wiki{{page.page}}?v={{hist.__len__() - hist.index(page)}}" class="login-link">view</a></td>
+{% endif %}
+</tr>
+{% endfor %}
+</table>

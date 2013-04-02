@@ -51,9 +51,9 @@ textarea {
 <a href="/" class="main-title"></a>
 <div class="login-area">
 {% if user %}
-<a href="/Final/wiki/_edit{{page}}" class="login-link">edit</a>&nbsp;&nbsp;&nbsp; {{user.username}} (<a href="/Final/wiki/logout" class="login-link">logout</a>)
+<a href="/Final/wiki/_edit{{page}}" class="login-link">edit</a> | <a href="/Final/wiki/_history{{page}}" class="login-link">history</a>&nbsp;&nbsp;&nbsp; {{user.username}} (<a href="/Final/wiki/logout" class="login-link">logout</a>)
 {% else %}
-<a href="/Final/wiki/login" class="login-link">login</a> | <a href="/Final/wiki/signup" class="login-link">signup</a>
+<a href="/Final/wiki/_history{{page}}" class="login-link">history</a>&nbsp;&nbsp;&nbsp;<a href="/Final/wiki/login" class="login-link">login</a> | <a href="/Final/wiki/signup" class="login-link">signup</a>
 {% endif %}
 </div>
 <br>
